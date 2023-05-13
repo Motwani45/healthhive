@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "493633994650",
+    "project_id": "healthhive4",
+    "storage_bucket": "healthhive4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493633994650:android:edf1473cce5eb8aaf3c423",
+        "android_client_info": {
+          "package_name": "com.example.gsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493633994650-njk3jv016gbihoq8j0gaip0ieam2tlcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAngDSYwlgORx9ovbnyv-6MdCIlPQtL4EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493633994650-njk3jv016gbihoq8j0gaip0ieam2tlcj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "493633994650-k529qs11ff75i3lbrkn912990o77bfka.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gsapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
