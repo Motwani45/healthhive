@@ -32,12 +32,13 @@ class FirestoreProvider with ChangeNotifier {
     try {
       String uid = auth.currentUser!.uid;
       String resumeUrl='';
+      String profileUrl='';
       Map<String,dynamic> userModel;
       if(accessType=="Doctor"){
-        userModel=DoctorModel(userId: uid, username: username, emailAddress: emailAddress, accessType: accessType, jobs: [], resumeUrl: resumeUrl).toMap();
+        userModel=DoctorModel(userId: uid, username: username, emailAddress: emailAddress, accessType: accessType, jobs: [], resumeUrl: resumeUrl,profileUrl: profileUrl).toMap();
       }
       else{
-        userModel=InternModel(userId: uid, username: username, emailAddress: emailAddress, accessType: accessType, jobsApplied: [], jobsSelected: [], resumeUrl: resumeUrl).toMap();
+        userModel=InternModel(userId: uid, username: username, emailAddress: emailAddress, accessType: accessType, resumeUrl: resumeUrl,profileUrl: profileUrl).toMap();
       }
       await firestore.collection(accessType).doc(uid).set(userModel).then((value) {
       });
@@ -45,7 +46,8 @@ class FirestoreProvider with ChangeNotifier {
     } catch (e) {
       utils.showSnackBar(context: context, content: e.toString());
     }
-  }Future<void> saveUserResume({
+  }
+  Future<void> saveUserResume({
     required File? resume,
     required String accessType,
     required BuildContext context}) async {
@@ -57,6 +59,24 @@ class FirestoreProvider with ChangeNotifier {
             storeFileToFirebase("resumes/$uid", resume);
       }
       await firestore.collection(accessType).doc(uid).update({'resumeUrl':resumeUrl}).then((value) {
+      });
+
+    } catch (e) {
+      utils.showSnackBar(context: context, content: e.toString());
+    }
+  }
+  Future<void> saveUserImage({
+    required File? pickedImage,
+    required String accessType,
+    required BuildContext context}) async {
+    try {
+      String uid = auth.currentUser!.uid;
+      String? profileUrl;
+      if (pickedImage != null) {
+        profileUrl = await
+            storeFileToFirebase("profileImage/$uid", pickedImage);
+      }
+      await firestore.collection(accessType).doc(uid).update({'profileUrl':profileUrl}).then((value) {
       });
 
     } catch (e) {

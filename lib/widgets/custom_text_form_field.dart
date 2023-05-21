@@ -162,7 +162,7 @@ class CustomTextFormField extends StatelessWidget {
   _setFilled() {
     switch (variant) {
       case TextFormFieldVariant.None:
-        return false;
+        return true;
       default:
         return true;
     }

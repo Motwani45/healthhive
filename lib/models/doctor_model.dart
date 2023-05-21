@@ -7,6 +7,7 @@ class DoctorModel{
   final String accessType;
   final List<String> jobs;
   final String? resumeUrl;
+  final String? profileUrl;
 
   const DoctorModel({
     required this.userId,
@@ -14,7 +15,8 @@ class DoctorModel{
     required this.emailAddress,
     required this.accessType,
     required this.jobs,
-    required this.resumeUrl,
+    this.resumeUrl,
+    this.profileUrl,
   });
 
   Map<String, dynamic> toMap() {
@@ -25,6 +27,7 @@ class DoctorModel{
       'accessType': this.accessType,
       'jobs': this.jobs,
       'resumeUrl': this.resumeUrl,
+      'profileUrl': this.profileUrl,
     };
   }
 
@@ -35,7 +38,8 @@ class DoctorModel{
       emailAddress: map['emailAddress'] as String,
       accessType: map['accessType'] as String,
       jobs: map['jobs'] as List<String>,
-      resumeUrl: map['resumeUrl'] as String?,
+      resumeUrl: map['resumeUrl'] as String,
+      profileUrl: map['profileUrl'] as String,
     );
   }
 }

@@ -1,80 +1,41 @@
 import 'package:flutter/material.dart';
-
-import '../utils/color_constants.dart';
-import '../utils/size_utils.dart';
+import 'package:gsapp/utils/color_constants.dart';
+import 'package:gsapp/utils/size_utils.dart';
 
 class AppDecoration {
-  static BoxDecoration get outlineBlack900192 => BoxDecoration(
-    color: ColorConstant.gray90002,
-    boxShadow: [
-      BoxShadow(
-        color: ColorConstant.black90019,
-        spreadRadius: getHorizontalSize(
-          2,
-        ),
-        blurRadius: getHorizontalSize(
-          2,
-        ),
-        offset: Offset(
-          0,
-          1,
-        ),
-      ),
-    ],
-  );
-  static BoxDecoration get txtOutlineGray500 => BoxDecoration(
-    color: ColorConstant.greenA400,
-    border: Border.all(
-      color: ColorConstant.gray500,
-      width: getHorizontalSize(
-        1,
-      ),
-    ),
-  );
-  static BoxDecoration get outlineBlack900191 => BoxDecoration(
-    color: ColorConstant.whiteA700,
-    boxShadow: [
-      BoxShadow(
-        color: ColorConstant.black90019,
-        spreadRadius: getHorizontalSize(
-          2,
-        ),
-        blurRadius: getHorizontalSize(
-          2,
-        ),
-        offset: Offset(
-          0,
-          1,
-        ),
-      ),
-    ],
-  );
   static BoxDecoration get fillGray900 => BoxDecoration(
     color: ColorConstant.gray900,
   );
-  static BoxDecoration get txtOutlineGray5001 => BoxDecoration(
+  static BoxDecoration get outlineBlack9004c1 => BoxDecoration(
     color: ColorConstant.whiteA700,
-    border: Border.all(
-      color: ColorConstant.gray500,
-      width: getHorizontalSize(
-        1,
+    boxShadow: [
+      BoxShadow(
+        color: ColorConstant.black9004c,
+        spreadRadius: getHorizontalSize(
+          2,
+        ),
+        blurRadius: getHorizontalSize(
+          2,
+        ),
+        offset: Offset(
+          0,
+          0,
+        ),
+      ),
+    ],
+  );
+  static BoxDecoration get outlineWhiteA700 => BoxDecoration(
+    border: Border(
+      bottom: BorderSide(
+        color: ColorConstant.whiteA700,
+        width: getHorizontalSize(
+          1,
+        ),
       ),
     ),
   );
-  static BoxDecoration get fillGray90002 => BoxDecoration(
-    color: ColorConstant.gray90002,
-  );
   static BoxDecoration get fillWhiteA70084 => BoxDecoration(
     color: ColorConstant.whiteA70084,
-  );
-  static BoxDecoration get txtFillGray90002 => BoxDecoration(
-    color: ColorConstant.gray90002,
-  );
-  static BoxDecoration get fillBluegray800 => BoxDecoration(
-    color: ColorConstant.blueGray800,
-  );
-  static BoxDecoration get fillBlueA200 => BoxDecoration(
-    color: ColorConstant.blueA200,
   );
   static BoxDecoration get outlineGray200 => BoxDecoration(
     border: Border(
@@ -86,7 +47,54 @@ class AppDecoration {
       ),
     ),
   );
-  static BoxDecoration get gradientGray90019Gray90002 => BoxDecoration(
+  static BoxDecoration get outlineBlack9004c => BoxDecoration(
+    color: Colors.white,
+    boxShadow: [
+      BoxShadow(
+        color: ColorConstant.black9004c,
+        spreadRadius: getHorizontalSize(
+          2,
+        ),
+        blurRadius: getHorizontalSize(
+          2,
+        ),
+        offset: Offset(
+          0,
+          0,
+        ),
+      ),
+    ],
+  );
+  static BoxDecoration get white => BoxDecoration(
+    color: ColorConstant.whiteA700,
+  );
+  static BoxDecoration get txtGradientDeeppurpleA700Lightblue50000 =>
+      BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(
+            0.5,
+            0,
+          ),
+          end: Alignment(
+            0.5,
+            1,
+          ),
+          colors: [
+            ColorConstant.deepPurpleA700,
+            ColorConstant.deepPurple30085,
+            ColorConstant.lightBlue50000,
+          ],
+        ),
+      );
+  static BoxDecoration get outlineGreenA400 => BoxDecoration(
+    border: Border.all(
+      color: ColorConstant.greenA400,
+      width: getHorizontalSize(
+        1,
+      ),
+    ),
+  );
+  static BoxDecoration get gradientGray90019Gray900 => BoxDecoration(
     gradient: LinearGradient(
       begin: Alignment(
         0.5,
@@ -98,84 +106,8 @@ class AppDecoration {
       ),
       colors: [
         ColorConstant.gray90019,
-        ColorConstant.gray90002,
+        ColorConstant.gray900,
       ],
-    ),
-  );
-  static BoxDecoration get white => BoxDecoration(
-    color: ColorConstant.whiteA700,
-  );
-  static BoxDecoration get txtFillGreenA400 => BoxDecoration(
-    color: ColorConstant.greenA400,
-  );
-  static BoxDecoration get outlineBlack9003f => BoxDecoration(
-    color: ColorConstant.whiteA700,
-    boxShadow: [
-      BoxShadow(
-        color: ColorConstant.black9003f,
-        spreadRadius: getHorizontalSize(
-          2,
-        ),
-        blurRadius: getHorizontalSize(
-          2,
-        ),
-        offset: Offset(
-          0,
-          4,
-        ),
-      ),
-    ],
-  );
-  static BoxDecoration get txtWhite => BoxDecoration(
-    color: ColorConstant.whiteA700,
-    border: Border.all(
-      color: ColorConstant.whiteA700,
-      width: getHorizontalSize(
-        1,
-      ),
-    ),
-  );
-  static BoxDecoration get gradientCyan900afCyan900af01 => BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment(
-        0.5,
-        0,
-      ),
-      end: Alignment(
-        0.5,
-        1,
-      ),
-      colors: [
-        ColorConstant.cyan900Af,
-        ColorConstant.cyan900Af01,
-      ],
-    ),
-  );
-  static BoxDecoration get fillGreen50 => BoxDecoration(
-    color: ColorConstant.green50,
-  );
-  static BoxDecoration get gradientBlack90000Black900 => BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment(
-        0.5,
-        0,
-      ),
-      end: Alignment(
-        0.5,
-        1,
-      ),
-      colors: [
-        ColorConstant.black90000,
-        ColorConstant.black900,
-      ],
-    ),
-  );
-  static BoxDecoration get outlineGreenA400 => BoxDecoration(
-    border: Border.all(
-      color: ColorConstant.greenA400,
-      width: getHorizontalSize(
-        1,
-      ),
     ),
   );
   static BoxDecoration get outlineBlack90019 => BoxDecoration(
@@ -195,6 +127,9 @@ class AppDecoration {
         ),
       ),
     ],
+  );
+  static BoxDecoration get txtFillWhiteA7008c => BoxDecoration(
+    color: ColorConstant.whiteA7008c,
   );
   static BoxDecoration get gradientBlack90033Black90033 => BoxDecoration(
     gradient: LinearGradient(
@@ -220,11 +155,6 @@ class BorderRadiusStyle {
       8,
     ),
   );
-  static BorderRadius txtCircleBorder16 = BorderRadius.circular(
-    getHorizontalSize(
-      16,
-    ),
-  );
 
   static BorderRadius customBorderTL30 = BorderRadius.only(
     topLeft: Radius.circular(
@@ -239,76 +169,9 @@ class BorderRadiusStyle {
     ),
   );
 
-  static BorderRadius customBorderBL18 = BorderRadius.only(
-    topRight: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-    bottomLeft: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-    bottomRight: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-  );
-
-  static BorderRadius circleBorder27 = BorderRadius.circular(
+  static BorderRadius roundedBorder25 = BorderRadius.circular(
     getHorizontalSize(
-      27,
-    ),
-  );
-
-  static BorderRadius circleBorder17 = BorderRadius.circular(
-    getHorizontalSize(
-      17,
-    ),
-  );
-
-  static BorderRadius customBorderTL18 = BorderRadius.only(
-    topLeft: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-    bottomLeft: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-    bottomRight: Radius.circular(
-      getHorizontalSize(
-        18,
-      ),
-    ),
-  );
-
-  static BorderRadius customBorderBL30 = BorderRadius.only(
-    bottomLeft: Radius.circular(
-      getHorizontalSize(
-        30,
-      ),
-    ),
-    bottomRight: Radius.circular(
-      getHorizontalSize(
-        30,
-      ),
-    ),
-  );
-
-  static BorderRadius circleBorder23 = BorderRadius.circular(
-    getHorizontalSize(
-      23,
-    ),
-  );
-
-  static BorderRadius circleBorder14 = BorderRadius.circular(
-    getHorizontalSize(
-      14,
+      25,
     ),
   );
 
@@ -318,15 +181,9 @@ class BorderRadiusStyle {
     ),
   );
 
-  static BorderRadius circleBorder30 = BorderRadius.circular(
+  static BorderRadius roundedBorder12 = BorderRadius.circular(
     getHorizontalSize(
-      30,
-    ),
-  );
-
-  static BorderRadius roundedBorder10 = BorderRadius.circular(
-    getHorizontalSize(
-      10,
+      12,
     ),
   );
 
@@ -336,15 +193,45 @@ class BorderRadiusStyle {
     ),
   );
 
-  static BorderRadius txtRoundedBorder6 = BorderRadius.circular(
+  static BorderRadius roundedBorder33 = BorderRadius.circular(
     getHorizontalSize(
-      6,
+      33,
     ),
   );
 
-  static BorderRadius txtCircleBorder12 = BorderRadius.circular(
+  static BorderRadius txtRoundedBorder33 = BorderRadius.circular(
     getHorizontalSize(
-      12,
+      33,
+    ),
+  );
+
+  static BorderRadius roundedBorder42 = BorderRadius.circular(
+    getHorizontalSize(
+      42,
+    ),
+  );
+
+  static BorderRadius txtRoundedBorder4 = BorderRadius.circular(
+    getHorizontalSize(
+      4,
     ),
   );
 }
+
+// Comment/Uncomment the below code based on your Flutter SDK version.
+
+// For Flutter SDK Version 3.7.2 or greater.
+
+double get strokeAlignInside => BorderSide.strokeAlignInside;
+
+double get strokeAlignCenter => BorderSide.strokeAlignCenter;
+
+double get strokeAlignOutside => BorderSide.strokeAlignOutside;
+
+// For Flutter SDK Version 3.7.1 or less.
+
+// StrokeAlign get strokeAlignInside => StrokeAlign.inside;
+//
+// StrokeAlign get strokeAlignCenter => StrokeAlign.center;
+//
+// StrokeAlign get strokeAlignOutside => StrokeAlign.outside;

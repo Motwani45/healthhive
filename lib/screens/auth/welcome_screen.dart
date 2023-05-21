@@ -5,6 +5,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gsapp/providers/firebase/firestore/firestore_provider.dart';
+import 'package:gsapp/screens/interns/intern_home_screen.dart';
+import 'package:gsapp/screens/doctors/doctor_home_screen.dart';
 import 'package:gsapp/utils/firebase_utils.dart';
 import 'package:gsapp/widgets/app_logo.dart';
 import 'package:provider/provider.dart';
@@ -316,16 +318,16 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                        final downloadUrl=await Provider.of<FirestoreProvider>(context,listen: false).saveUserResume(resume: _file, accessType: accessType!, context: context);
                        _utils.dismissDialog(context);
                         if(accessType=="Intern"){
-
+                          Navigator.pushNamedAndRemoveUntil(context, InternHomeScreen.routeName, (route) => false);
                         }
                         else{
-
+                          Navigator.pushNamedAndRemoveUntil(context, DoctorHomeScreen.routeName, (route) => false);
                         }
 
                       },
                       variant: _platformFile == null
                           ? ButtonVariant.GreyVariant
-                          : ButtonVariant.OutlineGreenA400_1,
+                          : ButtonVariant.FillGreenA400,
                       text: "Let’s Start",
                       shape: ButtonShape.CircleBorder21,
                       fontStyle: ButtonFontStyle.ManropeBold14,

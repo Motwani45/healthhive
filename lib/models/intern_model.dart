@@ -5,18 +5,16 @@ class InternModel{
   final String username;
   final String emailAddress;
   final String accessType;
-  final List<String> jobsApplied;
-  final List<String> jobsSelected;
   final String? resumeUrl;
+  final String? profileUrl;
 
   const InternModel({
     required this.userId,
     required this.username,
     required this.emailAddress,
     required this.accessType,
-    required this.jobsApplied,
-    required this.jobsSelected,
-    required this.resumeUrl,
+    this.resumeUrl,
+    this.profileUrl,
   });
 
   Map<String, dynamic> toMap() {
@@ -25,9 +23,8 @@ class InternModel{
       'username': this.username,
       'emailAddress': this.emailAddress,
       'accessType': this.accessType,
-      'jobsApplied': this.jobsApplied,
-      'jobsSelected': this.jobsSelected,
       'resumeUrl': this.resumeUrl,
+      'profileUrl': this.profileUrl,
     };
   }
 
@@ -37,9 +34,8 @@ class InternModel{
       username: map['username'] as String,
       emailAddress: map['emailAddress'] as String,
       accessType: map['accessType'] as String,
-      jobsApplied: map['jobsApplied'] as List<String>,
-      jobsSelected: map['jobsSelected'] as List<String>,
-      resumeUrl: map['resumeUrl'] as String?,
+      resumeUrl: map['resumeUrl'] as String,
+      profileUrl: map['profileUrl'] as String,
     );
   }
 }

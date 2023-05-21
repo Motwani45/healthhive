@@ -5,10 +5,15 @@ import 'package:gsapp/firebase_options.dart';
 import 'package:gsapp/providers/firebase/auth/auth_provider.dart';
 import 'package:gsapp/providers/firebase/firestore/firestore_provider.dart';
 import 'package:gsapp/screens/auth/login_screen.dart';
+import 'package:gsapp/screens/auth/photo_screen.dart';
 import 'package:gsapp/screens/auth/signup_screen.dart';
 import 'package:gsapp/screens/auth/welcome_screen.dart';
+import 'package:gsapp/screens/doctors/create_job_screen.dart';
+import 'package:gsapp/screens/doctors/doctor_home_screen.dart';
 import 'package:gsapp/utils/color_constants.dart';
 import 'package:provider/provider.dart';
+
+import 'screens/interns/intern_home_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +46,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: ColorConstant.greenA400
         ),
-        home: LoginScreen(),
+        home: SignupScreen(),
       routes: {
           LoginScreen.routeName:(context){
             return LoginScreen();
@@ -51,6 +56,18 @@ class MyApp extends StatelessWidget {
         },
         WelcomeScreen.routeName:(context){
             return WelcomeScreen();
+        },
+        PhotoScreen.routeName:(context){
+            return PhotoScreen();
+        },
+        DoctorHomeScreen.routeName:(context){
+            return DoctorHomeScreen();
+        },
+        InternHomeScreen.routeName:(context){
+            return InternHomeScreen();
+        },
+        CreateJobScreen.routeName:(context){
+            return CreateJobScreen();
         }
       },),
     );

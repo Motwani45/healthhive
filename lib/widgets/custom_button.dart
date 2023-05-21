@@ -128,9 +128,9 @@ class CustomButton extends StatelessWidget {
       case ButtonVariant.OutlineGreenA400_1:
         return ColorConstant.greenA400;
       case ButtonVariant.OutlineGreenA400_2:
-        return null;
+        return ColorConstant.whiteA700;
       case ButtonVariant.GreyVariant:
-        return ColorConstant.gray800;
+        return ColorConstant.gray400;
       default:
         return ColorConstant.greenA400;
     }
@@ -154,7 +154,7 @@ class CustomButton extends StatelessWidget {
         );
         case ButtonVariant.GreyVariant:
         return BorderSide(
-          color: ColorConstant.gray800,
+          color: ColorConstant.gray400,
           width: getHorizontalSize(
             1.00,
           ),

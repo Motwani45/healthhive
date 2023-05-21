@@ -14,6 +14,7 @@ class ImageConstant {
   static String imgPlus = 'assets/images/img_plus.svg';
 
   static String imgGoogle224x24 = 'assets/images/img_google2_24x24.png';
+  static String profilePlaceholder= 'assets/images/profile-svgrepo-com.svg';
 
   static String imgMail = 'assets/images/img_mail.svg';
 

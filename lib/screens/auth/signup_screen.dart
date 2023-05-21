@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gsapp/dialogs/auth_error_dialog.dart';
 import 'package:gsapp/providers/firebase/auth/auth_provider.dart';
 import 'package:gsapp/providers/firebase/firestore/firestore_provider.dart';
+import 'package:gsapp/screens/auth/photo_screen.dart';
 import 'package:gsapp/screens/auth/welcome_screen.dart';
 import 'package:gsapp/utils/firebase_utils.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +57,7 @@ void saveForm(BuildContext context)async{
           accessType: _selectedAccess,
           context: context);
 utils.dismissDialog(context);
-Navigator.of(context).pushNamed(WelcomeScreen.routeName,arguments: {'username':usernameController.text.trim(),
+Navigator.of(context).pushNamed(PhotoScreen.routeName,arguments: {'username':usernameController.text.trim(),
   'userId':userId,
   'accessType':_selectedAccess
 });

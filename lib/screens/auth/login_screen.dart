@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:gsapp/dialogs/auth_error_dialog.dart';
 import 'package:gsapp/errors/auth_error.dart';
 import 'package:gsapp/providers/firebase/auth/auth_provider.dart';
+import 'package:gsapp/screens/interns/intern_home_screen.dart';
 import 'package:gsapp/screens/auth/signup_screen.dart';
+import 'package:gsapp/screens/doctors/doctor_home_screen.dart';
 import 'package:gsapp/utils/firebase_utils.dart';
 import 'package:gsapp/widgets/app_logo.dart';
 import 'package:provider/provider.dart';
@@ -43,14 +45,15 @@ class _LoginScreenState extends State<LoginScreen> {
     _formKey.currentState!.save();
     utils.showLoaderDialog(context, "Logging In");
     try {
-      await Provider.of<AuthProvider>(context).signIn(
+      await Provider.of<AuthProvider>(context,listen: false).signIn(
           context, emailController.text.trim(), passwordController.text.trim());
+      _selectedAccess=await Provider.of<AuthProvider>(context,listen: false).getSelectedAccess();
       utils.dismissDialog(context);
       if(_selectedAccess=="Intern"){
-
+        Navigator.pushNamedAndRemoveUntil(context, InternHomeScreen.routeName, (route) => false);
       }
       else{
-
+Navigator.pushNamedAndRemoveUntil(context, DoctorHomeScreen.routeName, (route) => false);
       }
     } on FirebaseAuthException catch (e) {
       utils.dismissDialog(context);
@@ -71,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.white,Colors.green]
+              colors: [Colors.white,Colors.white]
             ),
             image: DecorationImage(colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.3), BlendMode.srcOver),
@@ -204,51 +207,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     isObscureText: _isPasswordHidden,
                   ),
                   SizedBox(height: 30,),
-                  Container(
-                    height: 45,
-                    child:
-                    DropdownButtonFormField(
-                      value: _selectedAccess,
-                      dropdownColor: ColorConstant.greenA400,
-                      style: TextStyle(
-                        color: ColorConstant.whiteA700,
-                        fontSize: getFontSize(
-                          14,
-                        ),
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w400,
-                        height: getVerticalSize(
-                          1.43,
-                        ),
-                      ),
-                      icon: Icon(
-                        Icons.arrow_drop_down, color: ColorConstant.whiteA700,
-                        size: 22,),
-                      // iconEnabledColor: Colors.white,
-                      decoration: InputDecoration(
-                        isDense: true,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(
-                            getHorizontalSize(
-                              12.00,
-                            ),
-                          ),
-                        ),
-                        filled: true,
-                        fillColor: ColorConstant.whiteA70075,
-                      ),
-                      items: [
-                        DropdownMenuItem(child: Text("Doctor"),
-                            value: "Doctor"),
-                        DropdownMenuItem(child: Text("Intern"),
-                            value: "Intern"),
-                      ],
-                      onChanged: (value) {
-                        _selectedAccess = value!;
-                      },
-                    ),
-                  ),
                   CustomButton(
                     height: getVerticalSize(
                       48,
@@ -260,20 +218,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       saveForm(context);
                     },
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: getPadding(
-                        top: 10,
-                      ),
-                      child: Text(
-                        "Forgot Password?",
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtManropeBold14,
-                      ),
-                    ),
                   ),
 
                   // Align(

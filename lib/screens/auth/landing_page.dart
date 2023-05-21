@@ -30,7 +30,7 @@ class LandingPage extends StatelessWidget {
                 1,
               ),
               colors: [
-                ColorConstant.black90000,
+                ColorConstant.black9007f,
                 ColorConstant.black900,
               ],
             ),
@@ -104,7 +104,7 @@ class LandingPage extends StatelessWidget {
                     bottom: 12,
                   ),
                   decoration: AppDecoration.white.copyWith(
-                    borderRadius: BorderRadiusStyle.roundedBorder10,
+                    borderRadius: BorderRadiusStyle.roundedBorder12,
                   ),
                   child: InkWell(
                     onTap: (){},
