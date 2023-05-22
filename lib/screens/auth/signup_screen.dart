@@ -153,7 +153,7 @@ Navigator.of(context).pushNamed(PhotoScreen.routeName,arguments: {'username':use
                       ),
                     ),
                     CustomTextFormField(
-                      // focusNode: FocusNode(),
+                      focusNode: FocusNode(),
                       validator: (val){
                         val=val!.trim();
                         if(val.isEmpty){
@@ -182,7 +182,7 @@ Navigator.of(context).pushNamed(PhotoScreen.routeName,arguments: {'username':use
                       ),
                     ),
                     CustomTextFormField(
-                      // focusNode: FocusNode(),
+                      focusNode: FocusNode(),
                       validator: (val){
                         val=val!.trim();
                         if(val.isEmpty){
@@ -277,6 +277,7 @@ Navigator.of(context).pushNamed(PhotoScreen.routeName,arguments: {'username':use
                       ),
                     ),
                     CustomTextFormField(
+                      focusNode: FocusNode(),
                       validator: (val){
                         val=val!.trim();
                         if(val.isEmpty){

@@ -93,53 +93,6 @@ class LandingPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  margin: getMargin(
-                    top: 14,
-                  ),
-                  padding: getPadding(
-                    left: 64,
-                    top: 12,
-                    right: 64,
-                    bottom: 12,
-                  ),
-                  decoration: AppDecoration.white.copyWith(
-                    borderRadius: BorderRadiusStyle.roundedBorder12,
-                  ),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomImageView(
-                          imagePath: ImageConstant.imgGoogle2,
-                          height: getSize(
-                            20,
-                          ),
-                          width: getSize(
-                            20,
-                          ),
-                          margin: getMargin(
-                            top: 1,
-                            bottom: 1,
-                            right: 10
-                          ),
-                        ),
-                        Padding(
-                          padding: getPadding(
-                            top: 4,
-                          ),
-                          child: Text(
-                            "Continue with Google",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: AppStyle.txtManropeSemiBold16,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
                 Align(
                   alignment: Alignment.center,
                   child: Padding(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gsapp/firebase_options.dart';
 import 'package:gsapp/providers/firebase/auth/auth_provider.dart';
 import 'package:gsapp/providers/firebase/firestore/firestore_provider.dart';
+import 'package:gsapp/screens/auth/landing_page.dart';
 import 'package:gsapp/screens/auth/login_screen.dart';
 import 'package:gsapp/screens/auth/photo_screen.dart';
 import 'package:gsapp/screens/auth/signup_screen.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: ColorConstant.greenA400
         ),
-        home: SignupScreen(),
+        home: LandingPage(),
       routes: {
           LoginScreen.routeName:(context){
             return LoginScreen();

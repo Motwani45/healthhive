@@ -7,7 +7,6 @@ import 'package:gsapp/utils/image_constants.dart';
 
 import 'package:gsapp/utils/size_utils.dart';
 import 'package:gsapp/widgets/custom_button.dart';
-import 'package:gsapp/widgets/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class ApplicantsItemWidget extends StatelessWidget {
@@ -24,7 +23,7 @@ final InternModel internModel;
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
           ),
-          child: internModel.profileUrl!.isEmpty?SvgPicture.asset(ImageConstant.profilePlaceholder):Image.network(internModel.profileUrl!),
+          child: internModel.profileUrl!.isEmpty?SvgPicture.asset(ImageConstant.profilePlaceholder,height: 60,):Image.network(internModel.profileUrl!,height: 60,),
         ),
         Padding(
           padding: getPadding(
@@ -67,7 +66,6 @@ final InternModel internModel;
             ),
             text: "View resume",
             margin: getMargin(
-              left: 43,
               top: 7,
               bottom: 7,
             ),
